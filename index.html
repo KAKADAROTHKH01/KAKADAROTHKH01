@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAKADAROTHKH01</title>
+<style>
+  :root{
+    --bg1:#0f0a2e;
+    --bg2:#1e1360;
+    --violet:#6d28d9;
+    --blue:#3b82f6;
+    --cyan:#38bdf8;
+    --card:rgba(255,255,255,0.06);
+    --card-border:rgba(255,255,255,0.14);
+    --text:#f1f0ff;
+    --sub:#b8b3e6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:'Segoe UI', 'Khmer OS', system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(56,189,248,0.25), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(109,40,217,0.35), transparent 45%),
+      linear-gradient(160deg, var(--bg1), var(--bg2) 60%, #2a0f5e);
+    background-attachment:fixed;
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 16px;
+    overflow-x:hidden;
+    position:relative;
+  }
+  /* ambient floating glow */
+  .glow{
+    position:fixed;
+    width:280px; height:280px;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:0.35;
+    z-index:0;
+    animation:drift 14s ease-in-out infinite alternate;
+  }
+  .glow.a{ background:var(--blue); top:-60px; left:-60px; }
+  .glow.b{ background:var(--violet); bottom:-80px; right:-60px; animation-delay:2s; }
+  @keyframes drift{
+    0%{ transform:translate(0,0) scale(1); }
+    100%{ transform:translate(20px,30px) scale(1.15); }
+  }
+
+  .card{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:400px;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:28px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    padding:36px 26px 28px;
+    box-shadow:0 20px 60px rgba(20,10,60,0.55), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .avatar-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom:18px;
+  }
+  .avatar{
+    width:96px; height:96px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:34px; font-weight:800;
+    color:#fff;
+    background:conic-gradient(from 220deg, var(--cyan), var(--blue), var(--violet), var(--cyan));
+    padding:3px;
+    position:relative;
+  }
+  .avatar::before{
+    content:"";
+    position:absolute; inset:3px;
+    border-radius:50%;
+    background:linear-gradient(145deg, #241a5e, #150c3d);
+  }
+  .avatar span{ position:relative; z-index:1; letter-spacing:1px; }
+
+  .name{
+    text-align:center;
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:0.5px;
+    background:linear-gradient(90deg, #a5b4fc, #67e8f9, #c4b5fd);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .tagline{
+    text-align:center;
+    font-size:13px;
+    color:var(--sub);
+    margin-top:6px;
+    margin-bottom:26px;
+    letter-spacing:0.3px;
+  }
+
+  .links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--text);
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:14px;
+    padding:12px 14px;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .link:hover, .link:active{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,0.10);
+    border-color:rgba(147,197,253,0.5);
+  }
+  .icon{
+    flex:0 0 34px;
+    width:34px; height:34px;
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, var(--blue), var(--violet));
+    color:#fff;
+  }
+  .icon svg{ width:18px; height:18px; fill:currentColor; }
+  .link-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.25;
+    overflow:hidden;
+  }
+  .link-label{ font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:0.6px; }
+  .link-value{ font-size:14.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+  .footer{
+    text-align:center;
+    margin-top:26px;
+    font-size:11px;
+    color:rgba(184,179,230,0.55);
+    letter-spacing:0.4px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .glow{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow a"></div>
+<div class="glow b"></div>
+
+<div class="card">
+  <div class="avatar-wrap">
+    <div class="avatar"><span>KK</span></div>
+  </div>
+  <div class="name">KAKADAROTHKH01</div>
+  <div class="tagline">Find me everywhere ✦ Links below</div>
+
+  <div class="links">
+
+    <a class="link" href="https://t.me/KAKADAROTHKH01" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M21.9 4.6c.2-.9-.6-1.6-1.4-1.3L2.6 10.4c-.9.4-.9 1.7.1 2l4.4 1.4 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.7.5 1.7.1 1.9-.7L21.9 4.6zM8.6 13.2l9-6.6-7.4 8-.3 2.9-1.3-4.3z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Telegram</span>
+        <span class="link-value">@KAKADAROTHKH01</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://t.me/KAKADAROTHKH02" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M21.9 4.6c.2-.9-.6-1.6-1.4-1.3L2.6 10.4c-.9.4-.9 1.7.1 2l4.4 1.4 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.7.5 1.7.1 1.9-.7L21.9 4.6zM8.6 13.2l9-6.6-7.4 8-.3 2.9-1.3-4.3z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Telegram</span>
+        <span class="link-value">@KAKADAROTHKH02</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://t.me/KAKADAROTHKH03" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M21.9 4.6c.2-.9-.6-1.6-1.4-1.3L2.6 10.4c-.9.4-.9 1.7.1 2l4.4 1.4 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.7.5 1.7.1 1.9-.7L21.9 4.6zM8.6 13.2l9-6.6-7.4 8-.3 2.9-1.3-4.3z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Telegram</span>
+        <span class="link-value">@KAKADAROTHKH03</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://wa.me/KAKADAROTHKH04" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">WhatsApp</span>
+        <span class="link-value">@KAKADAROTHKH04</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://www.facebook.com/share/1JBgvcy2PB/" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Facebook</span>
+        <span class="link-value">Facebook Profile</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://www.tiktok.com/@cdrama779?_r=1&_t=ZS-98wcMv6adv6" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M16.6 5.8c-1-1-1.5-2.3-1.5-3.8h-3.3v13.4c0 1.6-1.3 2.9-2.9 2.9a2.9 2.9 0 0 1-2.9-2.9 2.9 2.9 0 0 1 2.9-2.9c.3 0 .6 0 .9.1v-3.4c-.3 0-.6-.1-.9-.1A6.2 6.2 0 0 0 2.7 15.4a6.2 6.2 0 0 0 6.2 6.2 6.2 6.2 0 0 0 6.2-6.2V9c1.3 1 2.9 1.5 4.6 1.5V7.2c-1.1 0-2.1-.5-3.1-1.4z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">TikTok</span>
+        <span class="link-value">@cdrama779</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://www.instagram.com/kakada142?igsh=MWIybTY5dHE3MG13dA==" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.4-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.5-.3-1.2-.4-2.4-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.4.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.5-.2 1.2-.3 2.4-.4 1.3-.1 1.7-.1 4.9-.1zm0 1.8c-3.2 0-3.5 0-4.8.1-1 .1-1.5.2-1.9.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.4-.3.9-.3 1.9-.1 1.3-.1 1.6-.1 4.8s0 3.5.1 4.8c.1 1 .2 1.5.3 1.9.2.5.4.8.7 1.1.3.3.6.5 1.1.7.4.1.9.3 1.9.3 1.3.1 1.6.1 4.8.1s3.5 0 4.8-.1c1-.1 1.5-.2 1.9-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.4.3-.9.3-1.9.1-1.3.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1-.2-1.5-.3-1.9-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.4-.1-.9-.3-1.9-.3-1.3-.1-1.6-.1-4.8-.1zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4zm5.7-2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Instagram</span>
+        <span class="link-value">@kakada142</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://www.threads.com/@kakada142" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M16.7 11.4c-.1-3.5-2-5.5-5.5-5.6-2.1 0-3.8.9-4.8 2.6l1.5 1c.7-1.2 1.8-1.7 3.2-1.7 1.9 0 3.1 1 3.4 2.7-.9-.2-1.9-.3-2.9-.2-2.9.2-4.7 1.8-4.6 4 .1 2.2 2.2 3.5 4.6 3.4 2.1-.1 3.5-1.1 4.2-2.7.5.4.9.9 1.1 1.5l1.6-.7c-.4-1-1-1.8-1.8-2.3zm-5.6 4.2c-1.3.1-2.3-.5-2.4-1.6-.1-1.1 1-1.9 2.6-2 .5 0 1.1 0 1.7.2.1 1.9-.9 3.3-1.9 3.4z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Threads</span>
+        <span class="link-value">@kakada142</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://x.com/Kakada557" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M18.9 3H22l-7.6 8.6L23.4 21h-7.1l-5.5-6.6L4.5 21H1.4l8.1-9.2L1 3h7.3l5 6.1L18.9 3zm-1.2 16h1.7L7.4 5H5.6l12.1 14z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">X (Twitter)</span>
+        <span class="link-value">@Kakada557</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://youtube.com/@theskyhasturneddark?si=aEfo1YI-YQM11lm-" target="_blank" rel="noopener">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">YouTube</span>
+        <span class="link-value">@theskyhasturneddark</span>
+      </div>
+    </a>
+
+    <a class="link" href="mailto:Kakadakakada776@gmail.com">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm0 12h16V8.24l-8 6-8-6V18z"/></svg>
+      </div>
+      <div class="link-text">
+        <span class="link-label">Email</span>
+        <span class="link-value">Kakadakakada776@gmail.com</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="footer">✦ KAKADAROTHKH01 ✦</div>
+</div>
+
+</body>
+</html>
+
